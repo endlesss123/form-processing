@@ -102,6 +102,12 @@
       let myOutput = `<div id="container">`;
 
       urlParams.forEach(function(value,key){
+      
+        switch(key){
+         case "First_Name":
+          value = titleCase(value);
+         break;
+        }
 
         key = key.split("_").join(" ");
         myOutput += `<p>${key}: ${value}</p>`;
@@ -109,6 +115,17 @@
       myOutput += `<p><a href="index.html">CLEAR</a></p>`; 
       myOutput += `</div>`;
       document.querySelector("#output").innerHTML = myOutput;
+    }
+
+
+    function titleCase(str){
+      str = str.split("")
+
+      for(let x=0;x<str.length;x++){
+        str[x]=str[x].charAt(0).toUpperCase();
+      }
+      str = str.join("");
+      return str;
     }
   </script>  
  </body>
