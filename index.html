@@ -105,7 +105,7 @@
       
         switch(key){
          case "First_Name": 
-         case "Lasta_Name": 
+         case "Last_Name": 
           value = titleCase(value);
          break;
         }
@@ -120,12 +120,12 @@
 
 
     function titleCase(str){
-      str = str.split("")
+      str = str.split(" ");
 
       for(let x=0;x<str.length;x++){
-        str[x]=str[x].charAt(0).toUpperCase();
+        str[x]=str[x].charAt(0).toUpperCase() + str[x].slice(1).toLowerCase();
       }
-      str = str.join("");
+      str = str.join(" ");
       return str;
     }
   </script>  
